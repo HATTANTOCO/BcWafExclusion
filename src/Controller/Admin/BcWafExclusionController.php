@@ -32,7 +32,7 @@ class BcWafExclusionController extends BcAdminAppController
 
     public function index(): ?Response
     {
-        $this->setTitle('WAF除外コントローラ設定');
+        $this->setTitle(__d('bc_waf_exclusion', 'WAF除外コントローラ設定'));
 
         $userGroupsTable = $this->fetchTable('BaserCore.UserGroups');
         $userGroups = $userGroupsTable->find('list', keyField: 'id', valueField: 'title')
@@ -67,7 +67,7 @@ class BcWafExclusionController extends BcAdminAppController
                     // WAF種別や設定変更を即時反映させるため、既存ブロックを一度パージして再登録を促す
                     $service->purgeAll();
 
-                    $this->BcMessage->setSuccess('WAF除外の設定を保存しました。');
+                    $this->BcMessage->setSuccess(__d('bc_waf_exclusion', 'WAF除外の設定を保存しました。'));
                     $this->getRequest()->getSession()->write('BcWafExclusion.just_saved', true);
 
                     return $this->redirect([
@@ -76,7 +76,7 @@ class BcWafExclusionController extends BcAdminAppController
                         'action' => 'index',
                     ]);
                 } else {
-                    $this->BcMessage->setError('設定ファイルの保存に失敗しました。');
+                    $this->BcMessage->setError(__d('bc_waf_exclusion', '設定ファイルの保存に失敗しました。パーミッションを確認してください。'));
                 }
             }
         }
@@ -118,12 +118,12 @@ class BcWafExclusionController extends BcAdminAppController
         if (file_exists($htaccessPath) && is_writable($htaccessPath)) {
             if ($service->purgeAll()) {
                 $this->getRequest()->getSession()->write('BcWafExclusion.just_saved', true);
-                $this->BcMessage->setSuccess('すべてのWAF除外IPアドレスの登録を一括クリアしました。');
+                $this->BcMessage->setSuccess(__d('bc_waf_exclusion', 'すべてのWAF除外IPアドレスの登録を一括クリアしました。'));
             } else {
-                $this->BcMessage->setError('.htaccess の一括クリア処理に失敗しました。');
+                $this->BcMessage->setError(__d('bc_waf_exclusion', '.htaccess の一括クリア処理に失敗しました。'));
             }
         } else {
-            $this->BcMessage->setError('.htaccess ファイルが書き込み不可、または存在しません。');
+            $this->BcMessage->setError(__d('bc_waf_exclusion', '.htaccess ファイルが書き込み不可、または存在しません。'));
         }
 
         return $this->redirect([

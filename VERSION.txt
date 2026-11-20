@@ -1,6 +1,10 @@
-1.0.0
+1.0.1
 
 // Release Notes //
 
-[2026-11-18]  BcwafExclusion-1.0.0
+[2026-11-20]  BcWafExclusion-1.0.1
+- 管理画面UI・確認ダイアログ・メッセージの英語多言語化（i18n / en/bc_waf_exclusion.po）に対応
+
+[2026-11-18]  BcWafExclusion-1.0.0
 - 初版リリース
+- SiteGuard Lite / ModSecurity 両対応、対象.htaccess自動判定、パーミッション安全チェック付き環境診断機能

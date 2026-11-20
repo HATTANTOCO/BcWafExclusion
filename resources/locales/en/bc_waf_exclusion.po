@@ -1,0 +1,153 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BcWafExclusion\n"
+"POT-Creation-Date: 2026-11-20 00:00+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "WAF自動バイパス（BcWafExclusion）"
+msgstr "Automatic WAF Bypass (BcWafExclusion)"
+
+msgid "WAF（SiteGuard Lite / ModSecurity）による403誤検知を解決するため、管理画面操作中の対象ユーザーのIPアドレスのみを一時的に動的バイパスします。"
+msgstr "Temporarily and dynamically bypasses only the IP addresses of target users operating in the admin panel to prevent 403 false positives caused by WAFs (SiteGuard Lite / ModSecurity)."
+
+msgid "利用前に書き込み対象となる .htaccess（または webroot/.htaccess）に書き込み権限があるか確認してください。"
+msgstr "Before use, please ensure that the target .htaccess (or webroot/.htaccess) is writable by the web server."
+
+msgid "WAF除外コントローラ設定"
+msgstr "WAF Exclusion Settings"
+
+msgid "対象ユーザーグループ"
+msgstr "Target User Groups"
+
+msgid "WAF自動バイパスの対象（IPアドレスを自動登録するグループ）を選択してください。"
+msgstr "Select the user groups eligible for automatic WAF bypass (whose IP addresses will be registered automatically)."
+
+msgid "サーバー環境診断ステータス"
+msgstr "Server Environment Diagnostics"
+
+msgid "現在の接続元IPアドレス:"
+msgstr "Current Client IP Address:"
+
+msgid "webroot/.htaccess（baserCMSのインストールルート配下の webroot 内）"
+msgstr "webroot/.htaccess (inside webroot under the baserCMS installation root)"
+
+msgid ".htaccess（baserCMSのインストールルート直下）"
+msgstr ".htaccess (directly under the baserCMS installation root)"
+
+msgid "書き込み対象ファイル:"
+msgstr "Target File:"
+
+msgid "（警告：危険なパーミッション {0} です。安全のため 604 や 644 などに変更してください）"
+msgstr "(Warning: Unsafe permissions {0}. Please change to 604 or 644 for security.)"
+
+msgid "（書き込み可能 / パーミッション: {0}）"
+msgstr "(Writable / Permissions: {0})"
+
+msgid "（書き込み可能）"
+msgstr "(Writable)"
+
+msgid "（書き込み不可・パーミッションを確認してください）"
+msgstr "(Not writable - Please check file permissions)"
+
+msgid "検出されたApacheバージョン:"
+msgstr "Detected Apache Version:"
+
+msgid "（2.4.26以上: 条件クリア）"
+msgstr "(2.4.26 or higher: OK)"
+
+msgid "（2.4.26未満、またはApacheバージョン非公開環境）"
+msgstr "(Below 2.4.26, or Apache version is hidden)"
+
+msgid "ModSecurity（mod_security2）検出:"
+msgstr "ModSecurity (mod_security2) Detection:"
+
+msgid "検出済み"
+msgstr "Detected"
+
+msgid "未検出（または非公開構成）"
+msgstr "Not detected (or hidden by server configuration)"
+
+msgid "現在の動作ステータス:"
+msgstr "Current Operating Status:"
+
+msgid "停止中（.htaccess に書き込み権限がありません）"
+msgstr "Stopped (.htaccess is not writable)"
+
+msgid "有効（{0} 除外ディレクティブを自動書き込みします）"
+msgstr "Active (Automatically writing {0} exclusion directives)"
+
+msgid "待機中（自動判定条件を満たしていないため .htaccess への書き込みを行いません）"
+msgstr "Standby (Auto-detection criteria not met; .htaccess will not be modified)"
+
+msgid "使用するWAF種別"
+msgstr "WAF Type"
+
+msgid "SiteGuard Lite（ロリポップ！・エックスサーバー・さくらのレンタルサーバ等）"
+msgstr "SiteGuard Lite (Apache mod_siteguard.c module WAF)"
+
+msgid "ModSecurity（Apache 2.4.26以上 + mod_security2 環境）"
+msgstr "ModSecurity (Apache 2.4.26+ with mod_security2)"
+
+msgid "ご利用中のサーバーに導入されているWAFの種類を選択してください。"
+msgstr "Select the type of WAF installed on your web server."
+
+msgid "動作モード（ModSecurity強制有効化）"
+msgstr "Operation Mode (Force Enable ModSecurity)"
+
+msgid "自動判定（Apache 2.4.26以上 かつ mod_security2 検出時のみ出力）"
+msgstr "Auto-detect (Write directives only when Apache 2.4.26+ and mod_security2 are detected)"
+
+msgid "強制有効（バージョンやモジュールが非公開のサーバーでも強制出力）"
+msgstr "Force Enable (Always write directives even if version/modules are hidden)"
+
+msgid "セキュリティ対策等でサーバー情報（ServerTokens等）が隠蔽されており自動判定で「待機中」になる場合は、「強制有効」を選択してください。"
+msgstr "Select \"Force Enable\" if the status remains \"Standby\" because server information (such as ServerTokens) is hidden."
+
+msgid "※Apache 2.2系や .htaccess 内での SecRuleEngine 記述が禁止されたサーバーで強制有効にすると500エラーになる場合があります。"
+msgstr "* Note: Enabling Force Mode on Apache 2.2 or servers that prohibit SecRuleEngine in .htaccess may cause a 500 Internal Server Error."
+
+msgid "保　存"
+msgstr "Save"
+
+msgid "手動メンテナンス"
+msgstr "Manual Maintenance"
+
+msgid "現在の .htaccess の記述内容（確認用プレビュー）:"
+msgstr "Current .htaccess Content (Read-only Preview):"
+
+msgid "現在 .htaccess に登録されているすべてのWAF除外IPを消去（クリア）します。"
+msgstr "Clear all WAF-excluded IP addresses currently registered in .htaccess."
+
+msgid "※クリアを実行後、現在ログイン中のあなたのIPアドレスのみ自動的に再登録されます。"
+msgstr "* After clearing, only your currently logged-in IP address will be automatically re-registered."
+
+msgid "WAF除外IPを全てクリア"
+msgstr "Clear All Excluded IPs"
+
+msgid "現在登録されているすべてのWAF除外IPを削除します。よろしいですか？"
+msgstr "Are you sure you want to delete all currently registered WAF-excluded IP addresses?"
+
+msgid "WAF除外の設定を保存しました。"
+msgstr "WAF exclusion settings have been saved."
+
+msgid "設定ファイルの保存に失敗しました。パーミッションを確認してください。"
+msgstr "Failed to save the configuration file. Please check file permissions."
+
+msgid "すべてのWAF除外IPアドレスの登録を一括クリアしました。"
+msgstr "All registered WAF-excluded IP addresses have been cleared."
+
+msgid ".htaccess の一括クリア処理に失敗しました。"
+msgstr "Failed to clear .htaccess."
+
+msgid ".htaccess ファイルが書き込み不可、または存在しません。"
+msgstr ".htaccess is not writable or does not exist."
+
+msgid "BcWafExclusion の無効化準備として、.htaccess に登録されているWAF除外設定をすべて消去します。\n（※OKを押すと、続けてシステム標準の無効化確認ダイアログが表示されます）\n\n続行してもよろしいですか？"
+msgstr "To prepare for deactivating BcWafExclusion, all WAF exclusion rules registered in .htaccess will be cleared.\n(After clicking OK, the standard system deactivation confirmation dialog will appear.)\n\nDo you want to continue?"
+
+msgid "WAF自動バイパス（BcWafExclusion）"
+msgstr "Automatic WAF Bypass (BcWafExclusion)"
