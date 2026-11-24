@@ -164,11 +164,15 @@
                     e.preventDefault();
 
                     if (isDetachAction) {
-                        var isConfirm = confirm(
+                        var defaultMsg =
                             'BcWafExclusion の無効化準備として、.htaccess に登録されているWAF除外設定をすべて消去します。\n' +
                             '（※OKを押すと、続けてシステム標準の無効化確認ダイアログが表示されます）\n\n' +
-                            '続行してもよろしいですか？'
-                        );
+                            '続行してもよろしいですか？';
+                        var confirmMsg = (window.BcWafExclusionConfig && window.BcWafExclusionConfig.detachConfirm)
+                            ? window.BcWafExclusionConfig.detachConfirm
+                            : defaultMsg;
+
+                        var isConfirm = confirm(confirmMsg);
                         if (!isConfirm) {
                             return;
                         }

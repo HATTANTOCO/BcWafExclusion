@@ -67,6 +67,10 @@ class BcWafExclusionControllerEventListener extends BcControllerEventListener
                 'action' => 'resetAll',
             ]);
             $csrfToken = (string)$request->getAttribute('csrfToken');
+            $detachConfirmMsg = __d(
+                'bc_waf_exclusion',
+                "BcWafExclusion の無効化準備として、.htaccess に登録されているWAF除外設定をすべて消去します。\n（※OKを押すと、続けてシステム標準の無効化確認ダイアログが表示されます）\n\n続行してもよろしいですか？"
+            );
 
             $configScript = sprintf(
                 '<script>window.BcWafExclusionConfig = %s;</script>',
@@ -74,7 +78,8 @@ class BcWafExclusionControllerEventListener extends BcControllerEventListener
                     'apiUrl' => $apiUrl,
                     'resetUrl' => $resetUrl,
                     'csrfToken' => $csrfToken,
-                ], JSON_UNESCAPED_SLASHES)
+                    'detachConfirm' => $detachConfirmMsg,
+                ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
             );
 
             $view->append('script', $configScript);
